@@ -6,7 +6,7 @@
 # A loop that compares each letter to the .upper() or .lower() of itself will suffice.
 
 def case(x):
-    
+
 
 # PROBLEM 2 (Biggest, smallest, average - 4pts)
 # Make a function which takes 3 numbers as parameters.
