@@ -27,13 +27,15 @@ while sequence <= 1000:
 # but “1, 1, 4, 3, 6” is not. Determine the
 # probability of success using a simulation of a large number of trials.
 
+print("\n")
+
 from random import *
 
 trial = 0
 test = 0
 success = 0
 
-while trial <= 1000:
+while trial <= 10000:
     test = 0
     dice1 = randrange(1, 7)
     dice2 = randrange(1, 7)
@@ -52,7 +54,7 @@ while trial <= 1000:
         success += 1
     trial += 1
 
-print(success, "out of 1000 were successful")
+print(success, "out of 10000 were successful")
 
 
 # PROBLEM 3 (Number Puzzler - 6pts)
@@ -61,3 +63,13 @@ print(success, "out of 1000 were successful")
 # What are the digits?
 # Note: to make ABCD and DCBA conventional numbers, neither A nor D can be zero.
 # Use a quadruple-nested loop to solve. 
+
+print("\n")
+
+for a in range(1,10):
+    for b in range(10):
+        for c in range(10):
+            for d in range(1,10):
+                num = str(a) + str(b) + str(c) + str(d)
+                num_reverse = str(d) + str(c) + str(b) + str(a)
+                print(num, num_reverse)
