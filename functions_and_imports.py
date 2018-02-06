@@ -5,7 +5,13 @@
 # Make a function takes a string as a parameter, then prints how many upper case letters are contained in the string.
 # A loop that compares each letter to the .upper() or .lower() of itself will suffice.
 
+name = "Your Mom"
+upper = 0
 
+for char in name:
+    if char != char.lower():
+        upper += 1
+print(upper, "\n")
 
 
 # PROBLEM 2 (Biggest, smallest, average - 4pts)
@@ -55,7 +61,20 @@ def product_sum(n1, n2):
 # Inside this new module/file, make a login function which works according to the flow diagram PasswordFlowchart.png in this folder
 # Substitute your name for Rohan's, and use whatever generic password you want.
 
+print("\n")
+
+import import_me
+
+'''
+Username: Rohan
+Password: Jack is a loser
+'''
+
+
 # PROBLEM 6 (main - 4pts)
 # import the file import_me from Problem 5
 # Create a main program using the format if __name__ == "__main__": 
 # Place every call from problems 1 through 5 into this program.
+
+
+import_me.login()
