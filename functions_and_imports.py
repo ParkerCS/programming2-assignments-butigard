@@ -5,7 +5,7 @@
 # Make a function takes a string as a parameter, then prints how many upper case letters are contained in the string.
 # A loop that compares each letter to the .upper() or .lower() of itself will suffice.
 
-def case(x):
+
 
 
 # PROBLEM 2 (Biggest, smallest, average - 4pts)
@@ -13,8 +13,28 @@ def case(x):
 # The function then prints the largest, the smallest, and their average, rounded to 2 decimals.
 # Display the answers in a "nicely" formatted way.
 
+def num(first, second, third):
+    '''
 
+    :param first:
+    :param second:
+    :param third:
+    :return: Smallest, Largest, Average
+    '''
+    if first > second:
+        largest = first
+        smallest = second
+    else:
+        largest = second
+        smallest = first
+    if third > largest:
+        largest = third
+    if third < smallest:
+        smallest = third
+    average = (first + second + third)/3
+    print("Smallest is", smallest, "\nBiggest is", largest, "\nAverage is", average)
 
+num(5, 4, 6)
 # PROBLEM 4 (add me, multiply me - 4pts)
 # Make a function which takes in two integers and RETURNS their sum AND their product.
 
@@ -28,6 +48,7 @@ def product_sum(n1, n2):
     product = n1 * n2
     sum = n1 + n2
     return product, sum
+
 
 # PROBLEM 5 (Login - 4pts)
 # Make a file called import_me.py in this same project
