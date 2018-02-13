@@ -4,21 +4,21 @@
 
 #PROBLEM 1 (2pts)
 #Use {}.format() to print 0.000321192 in scientific notation to two decimals
-
-
-print("my answer")
+my_answer = "{:.2e}".format(0.000321192)
+print(my_answer)
 
 #PROBLEM 2 (2pts)
 #You get 8 out of 9 on a quiz.
 #Print 8/9 using {}.format() so that it appears as 88.9%
-
+my_answer = "{:.1%}".format(8/9)
+print(my_answer)
 
 
 #PROBLEM 3 (3pts)
 #Take the following program:
 
-score = 41237
-highscore = 1023407
+score = "{:,}".format(41237)
+highscore = "{:,}".format(1023407)
 print("Score:      " + str(score) )
 print("High score: " + str(highscore) )
 
@@ -59,8 +59,9 @@ print("High score: " + str(highscore) )
 #1/20 = 0.05
 
 
-for i in range(1, 20):
-  print(i) # in case you forgot how to use a loop, here's a start
+for i in range(1, 21):
+    x = 1 / i
+    print("1 /", i, "=", "{:.4f}".format(x)) # in case you forgot how to use a loop, here's a start
 
 
 
