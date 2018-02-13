@@ -65,7 +65,7 @@ for i in range(1, 21):
 
 
 
-
+from math import *
 #PROBLEM 5 (From Math Class to Code - 5pts)
 # Print the answer to the math question:
 # 3(60x^2 + 3x/9) + 2x - 4/3(x) - sqrt(x)
