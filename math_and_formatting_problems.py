@@ -71,11 +71,11 @@ from math import *
 # 3(60x^2 + 3x/9) + 2x - 4/3(x) - sqrt(x)
 # where x = 12.83
 
-
+'''
 x = 12.83
-your_answer = 0  # Substitute your equation for the zero
+your_answer = 3 (60 * (x ** 2) + )  # Substitute your equation for the zero
 print(your_answer)
-
+'''
 
 #PROBLEM 2 (Wholesale Books - 5pts)
 #The cover price of a book is $27.95, but bookstores get a 50 percent discount.

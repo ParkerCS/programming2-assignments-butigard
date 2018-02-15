@@ -1,16 +1,27 @@
 #LISTS (31PTS TOTAL)
 #In these exercises you should should use functions as needed.  All functions should have comments to describe their purpose.
 
+import random
+
 # PROBLEM 1 (Using List Comprehensions - 6pts)
 # Use the list comprehension method to do the following:
 # a) Make a list of numbers from 1 to 100
+my_list = [x for x in range(1, 101)]
+print(my_list)
+
 # b) Make a list of even numbers from 20 to 40
+my_list = [x for x in range(20, 41) if x % 2 == 0]
+print(my_list)
+
 # c) Make a list of squares from 1 to 100 (1 ** 2 to 100 ** 2)
+my_list = [x ** 2 for x in range(1, 101)]
+print(my_list)
 
 #PROBLEM 2 (8-ball - 5pts)
 # A magic 8-ball, when asked a question, provides a random answer from a list.
 # The code below contains a list of possible answers. Create a magic 8-ball program that
 # prints a random answer.
+
 answer_list = [ "It is certain", "It is decidedly so", "Without a \
 doubt", "Yes, definitely", "You may rely on it", "As I see it, \
 yes", "Most likely", "Outlook good", "Yes", "Signs point to yes",
@@ -19,11 +30,26 @@ now", "Cannot predict now", "Concentrate and ask again", "Don ' t \
 count on it", "My reply is no", "My sources say no", "Outlook \
 not so good", "Very doubtful" ]
 
+question = input("Ask a yes or no question:\n")
+print(random.choice(answer_list))
+
 
 # PROBLEM 3 (Shuffle - 5pts)
 # A playing card consists of a suit (Heart, Diamond, Club, Spade) and a value (2,3,4,5,6,7,8,9,10,J,Q,K,A).
 # Create a list of all possible playing cards, which is a deck.
 # Then create a function that shuffles the deck, producing a random order.
+deck = []
+suits = ["S", "H", "C", "D"]
+numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+for number in numbers:
+    for suit in suits:
+        deck.append(number + suit)
+print(deck)
+
+shuffled_deck = []
+for x in range(len(deck)):
+    shuffled_deck.append(deck.pop(random.randrange(len(deck))))
+print(shuffled_deck)
 
 
 # PROBLEM 4 (Tic-Tac-Toe - 15pts)
@@ -43,6 +69,15 @@ not so good", "Very doubtful" ]
 # pass to a function as an argument if the function needs it.
 # I also use a function opponent(), that takes the player as argument and returns
 # the opponent. I use that to switch players after each move.
+def draw_board(board_input):
+    print(board_input[0][0], board_input[0][1], board_input[0][0])
+    print(board_input[1][0], board_input[1][1], board_input[1][0])
+    print(board_input[2][0], board_input[2][1], board_input[2][0])
+
+done = False
+board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+draw_board
+
 
 # The main program will be something along the lines of (in pseudo-code):
 # display board
