@@ -30,9 +30,10 @@ now", "Cannot predict now", "Concentrate and ask again", "Don ' t \
 count on it", "My reply is no", "My sources say no", "Outlook \
 not so good", "Very doubtful" ]
 
+'''
 question = input("Ask a yes or no question:\n")
 print(random.choice(answer_list))
-
+'''
 
 # PROBLEM 3 (Shuffle - 5pts)
 # A playing card consists of a suit (Heart, Diamond, Club, Spade) and a value (2,3,4,5,6,7,8,9,10,J,Q,K,A).
@@ -69,15 +70,60 @@ print(shuffled_deck)
 # pass to a function as an argument if the function needs it.
 # I also use a function opponent(), that takes the player as argument and returns
 # the opponent. I use that to switch players after each move.
+print
+
 def draw_board(board_input):
-    print(board_input[0][0], board_input[0][1], board_input[0][0])
-    print(board_input[1][0], board_input[1][1], board_input[1][0])
-    print(board_input[2][0], board_input[2][1], board_input[2][0])
+    print(" - - - ")
+    print("|" + board_input[0][0], board_input[0][1], board_input[0][2] + "|")
+    print("|" + board_input[1][0], board_input[1][1], board_input[1][2] + "|")
+    print("|" + board_input[2][0], board_input[2][1], board_input[2][2] + "|")
+    print(" - - - ")
+
+def check_full(board_input):
+    full = 0
+    for x in range(3):
+        for y in range(3):
+            if board_input[x][y] == " ":
+                return False
+    return True
+
+def check_win(board_input,player):
+    for x in range(3):
+        if board_input[x][0] == board_input[x][1] == board_input[x][2] == player:
+            return True
+    for x in range(3):
+        if board_input[0][x] == board_input[1][x] == board_input[2][x] == player:
+            return True
+    if board_input[0][0] == board_input[1][1] == board_input[2][2] == player:
+        return True
+    if board_input[0][2] == board_input[1][1] == board_input[2][0] == player:
+        return True
+
+
 
 done = False
 board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
-draw_board
-
+draw_board(board)
+player = "X"
+while not done:
+    row = int(input("Player " + player + " Enter row (1,2,3): "))
+    col = int(input("Player " + player + " Enter col (1,2,3): "))
+    if board[row-1][col-1] == " ":
+        board[row-1][col-1] = player
+    else:
+        print("That space is taken")
+        continue
+    draw_board(board)
+    if check_win(board,player):
+        print(player, "wins!!")
+        break
+    if check_full(board):
+        print("Draw!")
+        break
+    if player == "X":
+        player = "O"
+    else:
+        player = "X"
 
 # The main program will be something along the lines of (in pseudo-code):
 # display board
