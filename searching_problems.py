@@ -11,6 +11,17 @@ def split_line(line):
 #1.  (7pts) Write code which finds and prints the longest
 # word in the provided dictionary.  If there are more
 # than one longest word, print them all.  (read the file line by line to accomplish this task)
+file = open('search_files/dictionary.txt')
+dic = []
+
+for line in file:
+    words = split_line(line)
+    for word in words:
+        dic.append(word)
+
+for word in dic:
+    print(word)
+
 
 #2.  (7pts)  Write code which finds
 #  The total word count AND average word length of "AliceInWonderLand.txt"
