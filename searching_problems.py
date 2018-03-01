@@ -18,10 +18,10 @@ for line in file:
     words = split_line(line)
     for word in words:
         dic.append(word)
-
+'''
 for word in dic:
     print(word)
-
+'''
 
 #2.  (7pts)  Write code which finds
 #  The total word count AND average word length of "AliceInWonderLand.txt"
