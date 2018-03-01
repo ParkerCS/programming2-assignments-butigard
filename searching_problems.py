@@ -13,18 +13,48 @@ def split_line(line):
 # than one longest word, print them all.  (read the file line by line to accomplish this task)
 file = open('search_files/dictionary.txt')
 dic = []
+largest = "YEET"
+large_list = []
 
 for line in file:
     words = split_line(line)
     for word in words:
         dic.append(word)
-'''
-for word in dic:
-    print(word)
-'''
+
+for i in range(len(dic)):
+    word = dic[i]
+    if len(word) > len(largest):
+        largest = word
+
+large_list.append(largest)
+
+for i in range(len(dic)):
+    word = dic[i]
+    if len(word) == len(largest) and word != largest:
+        large_list.append(word)
+
+for i in large_list:
+    print(i)
+
+file.close()
 
 #2.  (7pts)  Write code which finds
 #  The total word count AND average word length of "AliceInWonderLand.txt"
+
+file = open('search_files/AliceInWonderLand.txt')
+all_words = []
+all_numbers = []
+x = 0
+
+for line in file:
+    words = split_line(line)
+    for word in words:
+        all_words.append(word)
+        all_numbers.append(len(word))
+
+for i in range(len(all_words)):
+    x += all_numbers[i]
+print(x / len(all_numbers))
 
 
 
