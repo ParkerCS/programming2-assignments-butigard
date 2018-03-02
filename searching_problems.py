@@ -52,10 +52,11 @@ for line in file:
         all_words.append(word)
         all_numbers.append(len(word))
 
+print(len(all_words))
+
 for i in range(len(all_words)):
     x += all_numbers[i]
 print(x / len(all_numbers))
-
 
 
 # CHOOSE ONE OF THE FOLLOWING TWO PROBLEMS
@@ -63,7 +64,27 @@ print(x / len(all_numbers))
 #3 (13pts)  How many times does "Cheshire" occur in"AliceInWonderLand.txt"?
 # How many times does "Cat" occur?
 # How many times does "Cheshire" immediately followed by "Cat" occur?
+cheshire = 0
+cat = 0
+cheshire_cat = 0
 
+
+for i in all_words:
+    if i.upper() == "CHESHIRE":
+        cheshire += 1
+
+for i in all_words:
+    if i.upper() == "CAT":
+        cat += 1
+
+for i in range(len(all_words)):
+    if all_words[i].upper() == "CHESHIRE":
+        if all_words[i+1].upper() == "CAT":
+            cheshire_cat += 1
+
+print(cheshire)
+print(cat)
+print(cheshire_cat)
 
 #### OR #####
 
