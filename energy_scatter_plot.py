@@ -48,7 +48,7 @@ for i in range(len(data)):
     if data[i][6] == 'K-12 School':
         try:
             school_name = data[i][2]
-            school_pw = float(data[i][11])
+            school_pw = float(data[i][12])
             school_ft = float(data[i][7])
             school_names.append(school_name)
             school_pow.append(school_pw)
@@ -57,21 +57,27 @@ for i in range(len(data)):
             print(school_name, "has no data")
 
 print(school_names)
-
 plt.figure(1)
 plt.scatter(school_pow, school_foot, s=4, c='red')
 plt.title("School Square Feet vs Electricity Usage")
 plt.xlabel("Electricity Usage(kBtu)")
 plt.ylabel("Square Feet(ft^2)")
+
+
+m, b = np.polyfit(school_pow, school_foot, 1)
+
+x = [0, 100000000]
+y = [m * point + b for point in x]
+plt.plot(x, y, color="green")
+
+
 for i in range(len(school_names)):
     if school_names[i] == "Francis W Parker School":
         plt.annotate(school_names[i], xy=(school_pow[i], school_foot[i])) # text, xy=()
         plt.scatter(school_pow[i], school_foot[i], s=8, c='green')
     if school_names[i] == "LaneTechHS-CPS":
-        plt.annotate(school_names[i], xy=(school_pow[i], school_foot[i])) # text, xy=()
+        plt.annotate(school_names[i], xy=(school_pow[i], school_foot[i]))  # text, xy=()
         plt.scatter(school_pow[i], school_foot[i], s=8, c='green')
-
-for i in range(len(school_names)):
     if school_names[i][0] == "U":
         print(school_names[i])
 

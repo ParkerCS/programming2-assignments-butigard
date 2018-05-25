@@ -6,8 +6,18 @@
 # Print the tweets in a nicely formatted way.
 # Have fun.  Again, nothing explicit.
 
+from bs4 import BeautifulSoup
+import requests
 
+url = "https://twitter.com/realDonaldTrump"
 
+page = requests.get(url)
+
+soup = BeautifulSoup(page.text, "html.parser")
+
+tweets = soup.findAll(class_="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text")
+for i in range(5):
+    print(tweets[i].text, "\n\n")
 
 
 # (20pts)
